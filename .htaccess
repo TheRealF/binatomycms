@@ -1,0 +1,43 @@
+# .htaccess
+RewriteEngine On
+Options -Indexes
+
+
+# front controller
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule !\.(pdf|js|ico|gif|jpg|png|css|rar|zip|tar\.gz)$ index.php [L]
+
+AddType application/x-httpd-php .php .phtml
+
+ErrorDocument 400 /views/error.phtml
+ErrorDocument 404 /views/error.phtml
+ErrorDocument 401 /views/error.phtml
+ErrorDocument 403 /views/error.phtml
+ErrorDocument 413 /views/error.phtml
+ErrorDocument 500 /views/error.phtml
+# protect against DOS attacks by limiting file upload size
+LimitRequestBody 10240000
+AddDefaultCharset UTF-8
+DefaultLanguage it-IT
+# server cache images for one month
+<FilesMatch ".(gif|jpg|jpeg|png|ico|webp)$">
+	Header set Cache-Control "max-age=2592000"
+</FilesMatch>
+# cache text, css, and javascript files for one week
+<FilesMatch ".(js|css|pdf|txt)$">
+	Header set Cache-Control "max-age=604800"
+</FilesMatch>
+# cache html and htm files for one day
+<FilesMatch ".(html|htm)$">
+	Header set Cache-Control "max-age=43200"
+</FilesMatch>
+# explicitly disable caching for scripts and other dynamic files
+<FilesMatch "\.(pl|php|cgi|spl|scgi|fcgi)$">
+	Header unset Cache-Control
+</FilesMatch>
+# secure .htaccess file
+<Files .htaccess>
+	Order allow,deny
+	Deny from all
+</Files>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<base href="/localhost" />
+	<meta charset="UTF-8" />
+	<title><?= $title ?></title>
+	<meta name="description" content="<?= $description ?>" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="assets/css/reset.css" type="text/css"/>
+	<link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
+	<link rel="icon" href="assets/img/favicon.ico" />
+	<?php if(!empty($layout)): ?>
+		<style>
+		header {
+			background-color: <?= $layout->header_color ?>;
+		}
+		header h1 {
+						color: <?= $layout->blog_FontColor ?>;
+						font-family: <?= $layout->blog_SelectFontFamily ?>;
+		}
+		</style>
+	<?php endif;?>
+</head>
+<body>
+	<header class="header">
+		<div class="htitle">
+			<a href="homepage"><h1 class="fade-in two"><?= $title ?></h1></a>
+		</div>
+		<?php foreach ($messages as $message) : ?>
+			<p class="message"><?= $message ?></p>
+		<?php endforeach ?>
+		<nav class="fade-in two">
+			<input class="menu-btn" type="checkbox" id="menu-btn" />
+			<label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+			<ul class="topnav menu">
+				<li><a href="homepage">Home</a></li>
+				<?php if(!empty($username)): ?>
+					<li class="dx"><a href="/administration/logout">Logout 🚪</a></p></li>
+					<li class="dx"><a href="administration"><?= $username ?> 🔐</a></p></li>
+				<?php else: ?>
+					<li class="dx"><a href="register">Registrati 📝</a></p></li>
+					<li class="dx"><a href="login">Login 🔑</a></p></li>
+				<?php endif; ?>
+			</ul>
+		</nav>
+	</header>

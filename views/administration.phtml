@@ -1,0 +1,43 @@
+<nav>
+	<ul class="topnav">
+		<?php if($stillBlogs != 6 || (empty($blogs))) : ?>
+			<li><a href="blogcreator">Crea un blog</a></li>
+		<?php elseif($stillBlogs == 6) : ?>
+			<li id="li_disabled">Limite blog raggiunto: <b>5</b></a></li>
+		<?php endif; ?>
+	</ul>
+</nav>
+<section class="col-l-12">
+</br></br>
+<p>Benvenuto su Binatomy, sei loggato come: <b><?= $username ?></b></p><br><br>
+	<?php if($stillBlogs != 6) : ?>
+		<p>Puoi creare ancora <b><?= $stillBlogs ?></b> blog.</p><br><br>
+	<?php else : ?>
+		<p>Puoi creare al massimo <b>5</b> blog.</p><br><br>
+	<?php endif; ?>
+	<?php if(!empty($blogs)) : ?>
+		<p>I tuoi blogs:</p><br><br>
+	<?php endif; ?>
+	<table>
+		<tr>
+			<td>
+				<?php foreach ($blogs as $blog) : ?>
+					<div class="card bgcard col-l-3">
+						<?php if(file_exists($blog['imageurl'])): ?>
+							<img src="<?= $blog['imageurl'] ?>">
+						<?php else: ?>
+							<img src="assets/img/blogs/placeholder.webp">
+						<?php endif; ?>
+						<div class="contain">
+							<h2><a id="bgcard_link" class="link1" href="blog/<?=$blog['url'] ?>"><?= $blog['name'] ?></a></h2>
+						</div>
+					</div>
+				<?php endforeach ?>
+			</td>
+		</tr>
+
+	</table>
+</section>
+<br><br><br>
+<section>
+</section>

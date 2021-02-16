@@ -1,0 +1,32 @@
+<head>
+	<link rel="stylesheet" href="assets/css/search.css" type="text/css"/>
+	<link rel="stylesheet" href="assets/css/footer.css" type="text/css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="assets/js/inview.js"></script>
+	<script src="assets/js/search.js"></script>
+	<script src="assets/js/paginator.js"></script>
+</head>
+<section class="topsec col-12">
+	<h1>Home</h1>
+</section>
+<section  class="col-l-12">
+	<div id="searchbar">
+		<div class="dropdown">
+			<button class="dropbtn"><p id="search_drop"></p><i class="freccia"></i></button>
+			<div class="dropdown-content">
+				<p id="search_disabled">Filtra per:</p>
+				<p id="search_blog">Nome</p>
+				<p id="search_utenti">Autore</p>
+				<p id="search_temi">Temi</p>
+				<p id="search_tutto">Nome & Autore</p>
+			</div>
+		</div>
+		<form id="cerca_form" method="post"><input id="cerca" type="text" placeholder="Cerca blog..." name='search_tutto'>
+			<input id="search_btn" type="submit" value="🔍"></form>
+		</div>
+		<br><br>
+	</section>
+	<section id="paginate" class="col-l-12 fade-in three">
+	</section>
+	<input type="hidden" id="pageno" name="pageno" value="0">
+	<img id="loader" src="assets/img/invisible.webp">

@@ -1,0 +1,39 @@
+<head>
+  <link rel="stylesheet" href="assets/css/style_settings.css" type="text/css"/>
+  <link rel="stylesheet" href="assets/css/customalert.css" type="text/css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="assets/js/customalert.js"></script>
+  <script src="assets/js/settings.js"></script>
+</head>
+<section class="col-l-12">
+  <h1><?= $title ?></h1>
+  <table class="col-l-3 col-11">
+    <tr>
+      <?php if($blogCoauthors): ?>
+        <th>Coautore</th>
+        <th>Azioni</th>
+      <?php endif; ?>
+    </tr>
+    <?php foreach ($blogCoauthors as $coauthor):	 ?>
+      <tr><td><?= trim($coauthor['author'], '$') ?></td><td><form method="post">
+        <input type='hidden' name="coauthor_del" value='<?=$coauthor['author']?>'>
+        <input class="btn1" type="submit" value='Rimuovi'>
+      </form></td></tr>
+    <?php endforeach; ?>
+  </table><br />
+  <br>
+  <form method="post" class="col-11">
+    Aggiungi nuovo coautore:<br />
+    <input type="text" name='coauthor_add' class="textform">
+    <input class="btn1" type="submit" value='Aggiungi'>
+  </form>
+  <br />
+
+
+</section>
+<section class="col-l-12">
+  <form id="formDelete" method="post">
+    <input type="hidden" name="confirm" value="true">
+    <a class="btn1 margin_fix" id="hidebtn">Elimina questo blog</a>
+  </form>
+</section>

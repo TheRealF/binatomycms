@@ -1,0 +1,18 @@
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="assets/js/post_creator.js"></script>
+	<script src="https://cdn.tiny.cloud/1/aaqz11d1ctdq84xrk6xawjyzcjzzcb4gf5yt3oaopyf38174/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+</head>
+<section class="col-l-11">
+	<h1>Post editor</h1>
+
+	<form method="POST">
+		Titolo<br /><br>
+		<input type="text" class="textform" id="title" name="title" minlength="1" maxlength="60" required/>
+		<label class='checkerLabel' id="titlelabel"></label><br /><br />
+		<textarea id="content" name="content"></textarea>
+		<label class='checkerLabel' id="contentlabel"></label><br /><br />
+		<br><br>
+		<button class="standardbtn btn1" id="submitPost">Pubblica</button>
+	</form>
+</section>

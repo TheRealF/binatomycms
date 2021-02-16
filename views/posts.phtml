@@ -1,0 +1,21 @@
+<style>
+#postTitle {
+  font-family: <?= $layout->post_SelectFontFamily?>;
+  font-size: <?= $layout->post_FontSize?>px;
+  color: <?= $layout->post_FontColor?>;
+  max-width: 50%;
+}
+</style>
+<?php foreach ($posts as $post) : ?>
+  <div class="post-content">
+    <?php if(!(trim($post['title']) == "")): ?>
+      <h2 id="postTitle"><?= $post['title'] ?></a></h2>
+      <hr><br>
+    <?php endif; ?>
+    <p><?= substr($post['content'], 0, 500) . '...'?><br>
+      <br><br>
+      <a class="link1" href="post/<?= $post['url'] ?>">Continua a leggere</a>
+    </p>
+  </div>
+  <br><br>
+<?php endforeach ?>

@@ -1,0 +1,15 @@
+<?php foreach ($blogs as $blog): ?>
+  <a href="blog/<?=($blog['url']) ?>">
+    <div class="card bgcard col-l-3 col-11">
+      <?php if(file_exists($blog['imageurl'])): ?>
+        <img src="<?= $blog['imageurl'] ?>">
+      <?php else: ?>
+        <img src="assets/img/blogs/placeholder.webp">
+      <?php endif; ?>
+      <br><br>
+      <div class="contain">
+        <h2><a id="bgcard_link" class="link1" href="blog/<?=($blog['url']) ?>"><?= $blog['name'] ?></a></h2>
+      </div>
+    </div>
+  </a>
+<?php endforeach ?>

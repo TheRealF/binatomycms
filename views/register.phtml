@@ -1,0 +1,62 @@
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/register.css" type="text/css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src='https://www.google.com/recaptcha/api.js' async defer></script>
+	<script src="assets/js/register.js"></script>
+</head>
+<section class="col-l-4">
+</section>
+<section class="col-l-4">
+	<h1>Registrazione</h1>
+
+	<form id="registerForm" method="post" autocomplete="off">
+
+		<label for='username'><b>Nome utente:</b></label>
+		<div class="input-container">
+			<i class="fa fa-user icon"></i>
+			<input class="textform" type='text' id='username' name='username' minlength="1" maxlength="32" required>
+		</div>
+		<label class='checkerLabel' id="usernamelabel"></label>
+		<br><br>
+
+		<label for='document'><b>Documento:</b></label>
+		<div class="input-container">
+			<i class="fa fa-file icon"></i>
+			<input class="textform" type='text' id='document' name='document' required minlength="5" maxlength="10" >
+		</div>
+		<label class='checkerLabel' id="documentlabel"></label>
+		<br><br>
+
+		<label for='email'><b>Indirizzo email:</b></label>
+		<div class="input-container">
+			<i class="fa fa-envelope icon"></i>
+			<input type='email' id='email' name='email' pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required minlength="3" maxlength="50">
+		</div>
+		<label class='checkerLabel' id="emaillabel"></label>
+		<br><br>
+
+		<label for='phone'><b>Numero di telefono:</b></label>
+		<div class="input-container">
+			<i class="fa fa-phone icon"></i>
+			<input class="textform" type='tel' id='phone' name='phone' required pattern="^[0-9+]{6,14}$" required minlength="6" maxlength="14">
+		</div>
+		<label class='checkerLabel' id="phonelabel"></label>
+		<br><br>
+
+		<label for='password'><b>Scegli una password:</b></label>
+		<div class="input-container">
+			<i class="fa fa-key icon"></i>
+			<input type='password' id='password' name='password'  required minlength="6" maxlength="60">
+		</div>
+		<br><br>
+
+		<div class="g-recaptcha" data-callback="recaptchaCallback" data-sitekey="6LcQvuMZAAAAAF0Vlz3mXhpbPFwMzpPw_xnUZh-d"></div>
+
+		<input type='submit' class="standardBtn" id='register' disabled>
+		<br><br>
+
+	</form>
+</section>
+<section class="col-l-4">
+</section>

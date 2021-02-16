@@ -1,0 +1,46 @@
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="assets/css/blog_creator.css" type="text/css"/>
+	<script src="assets/js/blog_creator.js"></script>
+	<script src="assets/js/tag_picker.js"></script>
+	<script src="assets/js/presets.js"></script>
+</head>
+<section class="col-l-4">
+</section>
+<section class="col-l-4 col-10">
+	<h1>Creazione Blog</h1>
+
+	<form id="mainForm" method="post"></form>
+
+	<div class="contain_args">
+		<h3><b>Nome del blog:</b></h3>
+		<p class="info">Può contenere solo lettere, numeri e spazi. Lunghezza massima: 32 caratteri</p>
+		<input class="textform" id="blognamefield" name="name" type="text" pattern="^(?!\s*$)[a-zA-Z0-9\s]+$" maxlength="32" form="mainForm" required>
+		<label class='checkerLabel' id="blognamelabel">Esiste già un blog con questo nome</label><br /><br />
+	</div><br><br>
+	<div class="contain_args">
+		<h3><b>Inserisci uno o più argomenti di cui si occuperà il tuo blog</b></h3>
+		<p class="info">Premi INVIO per aggiungere un argomento alla lista (solo lettere e numeri).<br /> Il numero limite è di 5 argomenti, lunghezza massima: 16 caratteri.</p>
+		<br /><label class="checkerLabel" id="hastagslabel">Hai già inserito questo argomento</label><br />
+		<input type="text" id="hashtags" autocomplete="off" maxlength="16" required>
+		<input type="hidden" id="hiddenArgs" name="args" value="" form="mainForm">
+		<div class="tag-container">
+		</div>
+	</div><br /><br />
+	<div class="contain_args">
+		<h3><b>Scegli uno stile predefinito:</b></h3><br>
+		<div class="dropdown">
+			<button class="dropbtn"><p id="search_drop"></p>⠀⠀⠀<i class="freccia"></i>⠀</button>
+			<div id="dropdown_presets" class="dropdown-content">
+				<input type="hidden" id="hiddenLayout" name="layout" value="" form="mainForm">
+			</div>
+		</div>
+	</div>
+	<br><br>
+	<div id="wrapper1">
+		<button class="standardBtn" id="mainSubmit" disabled readonly>Crea blog</button>
+	</div>
+</section>
+
+<section class="col-l-4">
+</section>

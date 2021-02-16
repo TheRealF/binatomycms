@@ -1,0 +1,30 @@
+#searchbar{
+  margin-top: 5%;
+  margin-left: 1%;
+}
+#cerca{
+  display: inline-block;
+  padding: 12px 16px;
+}
+#cerca_form{
+  display: inline-block;
+}
+
+#search_btn{
+  display: inline-block;
+  padding: 12px 16px;
+}
+#search_disabled{
+  background-color: #7FB7BE;
+  color: white;
+  cursor: default;
+}
+
+#search_btn:hover{
+  background-color: rgb(133, 133, 133);
+}
+@media only screen and (min-width: 768px) {
+  #searchbar{
+    margin-top: 0%;
+  }
+}

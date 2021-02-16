@@ -1,0 +1,104 @@
+<head>
+	<link rel="stylesheet" href="assets/css/post.css" type="text/css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="assets/js/post.js"></script>
+	<script src="assets/js/inview.js"></script>
+	<script src="assets/js/paginator.js"></script>
+	<style>
+	body {
+		<?php
+		if ($layout->bg_post_mode == "img"){
+			echo "background-image: url('" . $backgroundImage . "');";
+		} else if ($layout->bg_post_mode == "solidColor"){
+			echo "background-color: " . $layout->post_bgColor . ";";
+		}
+		?>
+	}
+
+	#postTitle {
+		font-family: <?= $layout->post_SelectFontFamily?>;
+		font-size: <?= $layout->post_FontSize?>px;
+		color: <?= $layout->post_FontColor?>;
+	}
+
+</style>
+</head>
+<nav>
+	<ul class=" topnav">
+		<?php if(isset($nodelete)): ?>
+			<li class="dx"><a href="post/<?= $postUrl ?>/elimina">Elimina Post</a></li>
+		<?php endif; ?>
+		<li><a id="blogname_post" class="link2" href="blog/<?= $blogURL ?>"><?= $blogName ?></a></li>
+	</ul>
+</nav>
+<section class="col-l-12">
+	<div class="col-l-3">
+	</div>
+
+	<div class="col-l-6">
+
+		<div class="blog-post shadow">
+			<div class="blog-post-inner">
+				<?php if ($title != ""): ?>
+					<h1 id="postTitle"><?= $title ?></h1>
+					<hr><br><br>
+				<?php endif; ?>
+				<?= $content ?>
+				<p class="p_info">Pubblicato il <?= $data ?> alle <?= $ora ?></p>
+				<p class="blog_info">Blog: <a class=" link1" href="blog/<?= $blogURL ?>"><?= $blogName ?></a></p>
+			</div>
+		</div>
+
+	</div>
+	<div class="col-l-3">
+	</div>
+</section>
+<section class="col-l-12">
+	<div class="col-l-3">
+	</div>
+	<div class="col-l-6 show">
+		<div class="blog-post shadow">
+			<div class="blog-post-inner">
+				<button class="btn1" type="button" name="show_comments">Mostra commenti</button><br />
+			</div>
+		</div>
+	</div>
+	<div class="col-l-6 pop_comment_container">
+		<div class="inner  left_fix">
+			<span class="close"></span>
+			<h1 class="pop_comment_title">Aggiungi un nuovo commento</h1>
+			<div class="pop_comment_body">
+				<div>
+					<form method="post">
+						<textarea name="text" class="pop_comment_textarea" placeholder="Scrivi il tuo commento..." rows="8"></textarea>
+						<div class="pop_comment_post">
+							<div>
+								<input id="sub_com" class="btn1" type="submit" value="Salva commento"/>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-l-6 hid">
+		<div class="blog-post shadow ">
+			<div class="blog-post-inner">
+				<h3>Sezione Commenti</h3>
+				<hr>
+				<?php if($currentUsername): ?>
+					<div>
+						<button class="btn1 btn_comment" type="button" name="btn_comment">Commenta</button>
+					<?php endif; ?>
+					<button class="btn1 hide_comments" type="button" name="hide_comments">Nascondi commenti</button>
+				</div>
+				<br><br><br><br><br>
+				<div id="paginate">
+				</div>
+				<input type="hidden" id="pageno" name="pageno" value="0">
+				<img id="loader" src="assets/img/invisible.webp">
+			</div>
+		</div>
+	</div>
+
+</section>

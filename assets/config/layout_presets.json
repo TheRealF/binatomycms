@@ -1,0 +1,67 @@
+{
+  "Basic": {
+    "bg_blog_mode": "solidColor",
+    "blog_bgColor": "#f9f9f9",
+    "bg_post_mode": "solidColor",
+    "post_bgColor": "#f9f9f9",
+    "blog_SelectFontFamily": "Serif",
+    "blog_FontSize": "30",
+    "blog_FontColor": "#ffffff",
+    "post_SelectFontFamily": "Serif",
+    "post_FontSize": "30",
+    "post_FontColor": "#000000",
+    "header_color": "#7FB7BE"
+  },
+  "Alternative": {
+    "bg_blog_mode": "solidColor",
+    "blog_bgColor": "#f9f9f9",
+    "bg_post_mode": "solidColor",
+    "post_bgColor": "#15c188",
+    "blog_SelectFontFamily": "Arial",
+    "blog_FontSize": "42",
+    "blog_FontColor": "#7FB7BE",
+    "post_SelectFontFamily": "Tahoma",
+    "post_FontSize": "28",
+    "post_FontColor": "#7FB7BE",
+    "header_color": "#f9f9f9"
+  },
+  "Lava": {
+    "bg_blog_mode": "solidColor",
+    "blog_bgColor": "#CC6050",
+    "bg_post_mode": "solidColor",
+    "post_bgColor": "#CC6050",
+    "blog_SelectFontFamily": "Verdana",
+    "blog_FontSize": "26",
+    "blog_FontColor": "#CC6050",
+    "post_SelectFontFamily": "Verdana",
+    "post_FontSize": "36",
+    "post_FontColor": "#500000",
+    "header_color": "#7A0800"
+  },
+  "Aqua": {
+    "bg_blog_mode": "solidColor",
+    "blog_bgColor": "#3AA9C2",
+    "bg_post_mode": "solidColor",
+    "post_bgColor": "#3AA9C2",
+    "blog_SelectFontFamily": "Lucida Sans Unicode",
+    "blog_FontSize": "29",
+    "blog_FontColor": "#AEBDC2",
+    "post_SelectFontFamily": "Serif",
+    "post_FontSize": "26",
+    "post_FontColor": "7B888C",
+    "header_color": "#236675"
+  },
+  "Terra": {
+    "bg_blog_mode": "solidColor",
+    "blog_bgColor": "#C28D59",
+    "bg_post_mode": "solidColor",
+    "post_bgColor": "#755636",
+    "blog_SelectFontFamily": "Arial",
+    "blog_FontSize": "30",
+    "blog_FontColor": "#C26100",
+    "post_SelectFontFamily": "Arial",
+    "post_FontSize": "30",
+    "post_FontColor": "#8C4600",
+    "header_color": "#705233"
+  }
+}

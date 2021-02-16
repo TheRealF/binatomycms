@@ -1,0 +1,15 @@
+<?php foreach ($comments as $comment) : ?>
+      <div class="comment_container">
+        <div class="inner">
+      <p class="comment"><?= $comment['text'] ?></p><br>
+      <div class="c_cont"><p class="c_user">⠀<?= $comment['username'] ?></p>
+      <p class="c_dx">Pubblicato il <?= date('j-m-y', $comment['timestamp']) ?> alle: <?=date('G:i', $comment['timestamp'])?>⠀</p></div>
+      <?php if($currentUser == $comment['username']): ?>
+      <form method="post">
+      <input type="hidden" name="comment_username" value="<?=$comment['username']?>">
+      <input type="hidden" name="comment_timestamp" value="<?=$comment['timestamp']?>">
+      <input id="submitBtn" class="btn1" type="submit" value="Elimina Commento"/></form>
+      <?php endif; ?>
+    </div>
+            </div>
+<?php endforeach ?>

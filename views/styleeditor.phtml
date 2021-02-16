@@ -1,0 +1,118 @@
+<head>
+  <link rel="stylesheet" href="assets/css/blog_creator.css" type="text/css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="assets/js/style_settings.js"></script>
+  <script src="assets/js/tag_picker.js"></script>
+</head>
+<nav>
+  <ul class=" topnav">
+    <li><a href="blog/<?= $blogURL?>">Torna al blog <b><?= $blogName?></b></a></li>
+  </ul>
+</nav>
+<section class="col-l-3">
+</section>
+
+<section class="col-l-6">
+  <h1>Modifica lo stile per il tuo blog <b><?= $blogName ?></b></h1>
+  <form id="mainForm" method="post"></form>
+  <input type="hidden" id="hidden_bg_blog_mode" value="<?= $layout->bg_blog_mode?>">
+  <input type="hidden" id="hidden_bg_post_mode" value="<?= $layout->bg_post_mode?>">
+
+  <section class="col-l-12">
+    <section class="card col-l-12 pad">
+      <p>Seleziona il tipo di sfondo che vuoi utilizzare per la pagina principale del tuo blog:</p><br>
+      <input type="radio" id="radio_bg_blog_img" name="bg_blog_mode" value="img" form="mainForm">
+      <label for="radio_bg_blog_img">Sfondo con immagine</label>
+      <input type="radio" id="radio_bg_blog_solidColor" name="bg_blog_mode" value="solidColor" form="mainForm">
+      <label for="radio_bg_blog_solidColor">Sfondo a tinta unita</label><br><br>
+
+      <div id="bg_blog_panel_img">
+        <label>Seleziona un'immagine di sfondo per il blog (dimensione massima 1 MB):</label><br />
+        <h1 class="spanner" id="errorlabel"><span id="status_span"></span></h1>
+        <label id="blogBg_preview_label">Immagine di sfondo attuale:</label>
+        <br><br>
+        <img id="blogBg_preview" class="uploaderPreview img1">
+        <br><br>
+        <input type="file" id="blogBg_uploader" name="pic" class="picUploader" accept=".jpeg, .jpg, .png, .gif" form="blogBg_form">
+        <input class="btn1" type="button" id="blogBg_btn" value="Sfoglia..."/>
+        <input class="btn1" type="button" id='blogBg_apply' value="Carica">
+      </div>
+      <div id="bg_blog_panel_color">
+        <label>Colore di sfondo della pagina blog:</label><br />
+        <input type="color" id="blog_bgColor" name="blog_bgColor" value="<?= $layout->blog_bgColor ?>" form="mainForm"><br />
+      </div>
+    </section>
+
+
+
+    <section class="card col-l-12 pad">
+      <p>Seleziona il tipo di sfondo che vuoi utilizzare per i post del blog:</p><br>
+      <input type="radio" id="radio_bg_post_img" name="bg_post_mode" value="img" form="mainForm">
+      <label for="radio_bg_post_img">Sfondo con immagine</label>
+      <input type="radio" id="radio_bg_post_solidColor" name="bg_post_mode" value="solidColor" form="mainForm">
+      <label for="radio_bg_post_solidColor">Sfondo a tinta unita</label><br><br>
+
+      <div  id="bg_post_panel_img">
+        <label>Seleziona un'immagine di sfondo per i post (dimensione massima 1 MB):</label><br />
+        <h1 class="spanner" id="errorlabel1"></h1>
+        <label id="postBg_preview_label">Immagine di sfondo attuale:</label>
+        <br><br>
+        <img id="postBg_preview" class="uploaderPreview img1">
+        <br><br>
+        <input type="file" id="postBg_uploader" name="pic" class="picUploader" accept=".jpeg, .jpg, .png, .gif" form="postBg_form">
+        <input class="btn1" type="button" id="postBg_btn" value="Sfoglia..."/>
+        <input class="btn1" type="button" id='postBg_apply' value="Carica">
+        <br><br></div>
+        <div id="bg_post_panel_color">
+          <label>Colore di sfondo dei post:</label><br />
+          <input type="color" id="post_bgColor" name="post_bgColor" value="<?= $layout->post_bgColor ?>" form="mainForm">
+        </div>
+      </section>
+    </section>
+
+    <input type='hidden' id='blog_name' value='<?= $blogName?>'>
+    <form id="blogBg_form" method="post" enctype="multipart/form-data"></form>
+    <form id="postBg_form" method="post" enctype="multipart/form-data"></form>
+    <div id="creatoreStile">
+      <br><br>
+
+      <section class="card col-l-12 pad">
+        <h1 id="blog_FontPreview">Titolo del blog</h1>
+        <select id="blog_SelectFontFamily" name="blog_SelectFontFamily" form="mainForm" value="">
+          <option selected><?= ($layout->blog_SelectFontFamily == "") ? "" : $layout->blog_SelectFontFamily?></option>
+          <option> Serif </option>
+          <option> Arial </option>
+          <option> Tahoma </option>
+          <option> Verdana </option>
+          <option> Lucida Sans Unicode </option>
+        </select>
+        <input type="number" id="blog_FontSize" name="blog_FontSize" min="0" max="70" value="<?= $layout->blog_FontSize ?>" form="mainForm">
+        <input type="color" id="blog_FontColor" name="blog_FontColor" value="<?= $layout->blog_FontColor ?>" form="mainForm">
+        <br>
+
+        <h1 id="post_FontPreview">Titolo dei post</h1>
+        <select id="post_SelectFontFamily" name="post_SelectFontFamily" value="<?= $layout->post_SelectFontFamily ?>" form="mainForm">
+          <option selected><?= ($layout->post_SelectFontFamily == "") ? "" : $layout->post_SelectFontFamily?></option>
+          <option> Serif </option>
+          <option> Arial </option>
+          <option> Tahoma </option>
+          <option> Verdana </option>
+          <option> Lucida Sans Unicode </option>
+        </select>
+        <input type="number" id="post_FontSize" name="post_FontSize" min="0" max="70" value="<?= $layout->post_FontSize ?>" form="mainForm">
+        <input type="color" id="post_FontColor" name="post_FontColor" value="<?= $layout->post_FontColor ?>" form="mainForm">
+        <br /><br />
+
+        <p>Colore di sfondo dello header del blog:</p>  <br /><br />
+        <span id="header_color_preview"><?= $blogName ?></span><br><br>  <br><br>
+        <input type="color" id="header_color" name="header_color" value="<?= $layout->header_color ?>"  form="mainForm">
+        <br /><br />
+      </div>
+      <br><br>
+      <button class="btn1" id="mainSubmit" readonly>Salva</button>
+    </section>
+    <br><br>
+    <br><br>
+  </section>
+  <section class="col-l-3">
+  </section>

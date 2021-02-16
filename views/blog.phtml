@@ -1,0 +1,59 @@
+<head>
+	<link rel="stylesheet" href="assets/css/blog.css" type="text/css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="assets/js/inview.js"></script>
+	<script src="assets/js/paginator.js"></script>
+	<script src="assets/js/copy_layout.js"></script>
+	<style>
+	body {
+		<?php
+		if ($layout->bg_blog_mode == "img"){
+			echo "background-image: url('" . $backgroundImage . "');";
+		} else if ($layout->bg_blog_mode == "solidColor"){
+			echo "background-color: " . $layout->blog_bgColor . ";";
+		}
+		?>
+	}
+	</style>
+</head>
+<nav>
+	<ul class=" topnav">
+		<?php if(!empty($currentUser) && $currentUser == $blogAuthor): ?>
+			<li><a href="blogsettings/<?= $blogURL ?>">Impostazioni blog</a></li>
+			<li><a href="styleeditor/<?= $blogURL ?>">Personalizza blog</a></li>
+			<li id="blogname_li"><a href="postcreator/<?= $blogURL ?>">Crea post</a></li>
+		<?php endif; ?>
+		<?php if(!empty($currentUser) && in_array("$" . $currentUser, $allAuthors)): ?>
+			<li><a href="postcreator/<?= $blogURL ?>">Crea post</a></li>
+		<?php endif; ?>
+	</ul>
+</nav>
+<section  class="col-l-4">
+	<?php if(!empty($currentUser)): ?>
+		<div id="layoutDropdown">
+			<div class="dropdown" title="Copia lo stile di <?= $blog['name']?> in uno dei tuoi blog">
+				<button class="dropbtn width_fix"><p id="myblogs_drop"></p><i class="freccia"></i></button>
+				<div id="dropdown_myblogs" class="dropdown-content">
+					<h6 id="dropdown_title">Copia questo stile in:</h6>
+				</div>
+			</div>
+			<form method="post" action="/blog/<?= $blog['name'] ?>/copylayout">
+				<input type="hidden" name="bgToUpdateLayout">
+				<input id="copyButton" class="width_fix btn1" type="submit" value="Copia lo stile di questo blog nel blog scelto">
+			</form>
+		</div>
+	<?php endif; ?>
+</section>
+<section  class="col-l-4">
+	<div id="searchbar">
+		<form method="post"><input type="text" placeholder="Cerca nei titoli dei post..." name='search'>
+			<input type="submit" value="🔍"></form>
+		</div>
+		<br><br>
+		<div id="paginate">
+		</div>
+		<input type="hidden" id="pageno" name="pageno" value="0">
+		<img id="loader" src="assets/img/invisible.webp">
+	</section>
+	<section  class="col-l-4">
+	</section>

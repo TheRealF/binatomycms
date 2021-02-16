@@ -1,0 +1,30 @@
+<head>
+	<link rel="stylesheet" href="assets/css/blog.css" type="text/css"/>
+</head>
+<section class="col-l-11">
+	<h1>Ricerca</h1>
+	<br><br>
+	<section>
+		<?php foreach ($search as $result) : ?>
+			<?php if(!empty($result['name'])) : ?>
+				<div class="card col-l-3">
+					<?php if(file_exists("assets/img/blogs/bg_blog/" . $result['name'] . ".webp")): ?>
+						<img src="assets/img/blogs/bg_blog/<?= $result['name'] ?>.webp">
+					<?php else: ?>
+						<img src="assets/img/blogs/placeholder.webp">
+					<?php endif; ?>
+					<br><br>
+					<div class="contain">
+						<h2><a class="link1" href="blog/<?= $result['url'] ?>"><?= $result['name'] ?></a></h2>
+					</div>
+				</div>
+			<?php endif; ?>
+			<?php if(!empty($result['title'])): ?>
+				<div class="search-content col-10 col-l-3"><br>
+					<h2><a class="link1" href="post/<?= $result['url'] ?>"><?= $result['title'] ?></a></h2><br>
+					<p><?= substr($result['content'], 0, 600) . '...'?><br>
+					</div>
+				<?php endif; ?>
+			<?php endforeach ?>
+		</section>
+	</section>
