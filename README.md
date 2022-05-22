@@ -1,5 +1,5 @@
-# binatomycms
-README DA AGGIORNARE
+# Binatomycms
+
 
 Per la realizzazione del progetto di Basi di Dati, di seguito denominato “Binatomy CMS”, è stato utilizzato il pattern architetturale MVC (Model View Controller).
 La struttura del progetto è suddivisa in tre tipologie di componenti che insieme costituiscono l’applicazione: i model, che si occupano di interrogare il database con apposite query, le view, pagine web che contengono l’interfaccia grafica e presentano gli output, e i controller, il cui compito è far interagire model e view.
@@ -21,4 +21,9 @@ Per quanto riguarda i nomi dei file e la struttura del progetto sono state utili
 
 Tale sistema di nomenclatura è alla base del funzionamento del metodo autoloadFunction() contenuto in index.php: tale metodo è registrato come funzione autoload di PHP (spl_autoload_register()): si occupa di caricare automaticamente le classi istanziate nel programma, senza dover scrivere all’inizio di ogni file una lunga lista di “include” o “require”.
 I controller sono tutti derivati dal controller astratto (Controller.php) dal quale ereditano proprietà e metodi fondamentali al funzionamento dell’applicazione, quali ad esempio le funzioni di redirect, di rendering delle viste e di gestione delle eccezioni. Inoltre per la gestione dei controller è stato implementato un RouterController che riceve un indirizzo URL, lo processa e chiama il controller appropriato in base all’informazione fornitagli. Questo consente in seguito al controller di processare la richiesta e mostrare la vista relativa.
-Tale procedimento ha consentito, attraverso le giuste impostazioni del file .htaccess, di implementare un sistema di pretty urls: durante l’utilizzo del sito non è mai visibile la struttura delle directory e dei file nel web server. Gli URL sono formati con una logica più user-friendly:
+Tale procedimento ha consentito, attraverso le giuste impostazioni del file .htaccess, di implementare un sistema di pretty urls: durante l’utilizzo del sito non è mai visibile la struttura delle directory e dei file nel web server. Gli URL sono formati con una logica più user-friendly: 
+Esempio: 
+www.dominio.com/blog/IlMioBlogPreferito
+
+La relazione che documenta la realizzazione del progetto è allegata alla presente repo con il nome Relazione.pdf
+
