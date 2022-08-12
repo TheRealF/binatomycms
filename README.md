@@ -39,5 +39,5 @@ www.dominio.com/blog/IlMioBlogPreferito
 
 #### Authors:
 > [@TheRealF](https://github.com/TheRealF)
-> [@TheRealF](https://github.com/VibesMan)
+> [@VibesMan](https://github.com/VibesMan)
 
