@@ -1,7 +1,6 @@
 # Binatomy CMS
 
-## _Progetto di Basi di Dati_
-### Unipi, anno accademico 20/21
+## _Progetto di Basi di Dati, Unipi, anno accademico 20/21_ 
 
 Per la realizzazione del progetto di Basi di Dati, di seguito denominato “Binatomy CMS”, è stato utilizzato il pattern architetturale MVC (Model View Controller).
 La struttura del progetto è suddivisa in tre tipologie di componenti che insieme costituiscono l’applicazione: i model, che si occupano di interrogare il database con apposite query, le view, pagine web che contengono l’interfaccia grafica e presentano gli output, e i controller, il cui compito è far interagire model e view.
