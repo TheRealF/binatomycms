@@ -9,14 +9,14 @@ La struttura del progetto è suddivisa in tre tipologie di componenti che insiem
 * le **view**, pagine web che contengono l’interfaccia grafica e presentano gli output;
 * i **controller**, il cui compito è far interagire model e view.
 
-#### PDO 
+### PDO 
 Come sistema di accesso al database è stato scelto PDO *PHP Data Object*.
 La scelta di usare PDO è stata dettata dal fatto che è dotato di una sola interfaccia capace di comunicare con diversi DBMS. Nell’ottica di un futuro riutilizzo e ampliamento di Binatomy CMS, questo rende agevole il passaggio a sistemi diversi da MySQL.
 
-#### Prepared statements
+### Prepared statements
 Tutte le query utilizzate vengono trattate sotto forma di *prepared statements*. Questa scelta è dovuta in primo luogo al fatto che i prepared statements riducono il tempo di parsing della query da parte del server, poiché la preparazione della query avviene una volta sola; inoltre i prepared statements sono efficaci nella protezione contro attacchi di *SQL Injection*: essendo le query pre-compilate, l’input utente non può interferire con il codice della query.
 
-#### HTMLPurifier
+### HTMLPurifier
 Sempre per la gestione della sicurezza dell’applicazione è stato adottato l’utilizzo della libreria *HTMLPurifier* che, sanificando il contenuto dei post, protegge il sistema da eventuali attacchi *XSS*. Inoltre gli input vengono controllati e validati da funzioni implementate appositamente per questo compito.
 
 #### Template Engine
