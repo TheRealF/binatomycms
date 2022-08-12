@@ -38,6 +38,6 @@ www.dominio.com/blog/IlMioBlogPreferito
 :paperclip: La relazione che documenta la realizzazione del progetto è allegata alla presente repository con il nome *Relazione.pdf*
 
 #### Authors:
-> @TheRealF
-> @VibesMan
+> [@TheRealF](https://github.com/TheRealF)
+> [@TheRealF](https://github.com/VibesMan)
 
