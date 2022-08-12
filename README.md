@@ -12,7 +12,7 @@ La struttura del progetto è suddivisa in tre tipologie di componenti che insiem
 * i **controller**, il cui compito è far interagire model e view.
 
 ### :arrow_forward: PDO 
-Come sistema di accesso al database è stato scelto PDO *PHP Data Object*.
+Come sistema di accesso al database è stato scelto PDO, *PHP Data Object*.
 La scelta di usare PDO è stata dettata dal fatto che è dotato di una sola interfaccia capace di comunicare con diversi DBMS. Nell’ottica di un futuro riutilizzo e ampliamento di Binatomy CMS, questo rende agevole il passaggio a sistemi diversi da MySQL.
 
 ### :arrow_forward: Prepared statements
