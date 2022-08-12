@@ -19,16 +19,16 @@ Tutte le query utilizzate vengono trattate sotto forma di *prepared statements*.
 ### HTMLPurifier
 Sempre per la gestione della sicurezza dell’applicazione è stato adottato l’utilizzo della libreria *HTMLPurifier* che, sanificando il contenuto dei post, protegge il sistema da eventuali attacchi *XSS*. Inoltre gli input vengono controllati e validati da funzioni implementate appositamente per questo compito.
 
-#### Template Engine
+### Template Engine
 Per ottimizzare le performance e la resa visiva dell’applicazione è stato implementato un sistema di rendering delle views, salvate in formato *.phtml*, che vengono così generate separatamente e dinamicamente attraverso un sistema di templating. Sono state adottate diverse soluzioni per l’ottimizzazione delle performance come l’adozione del formato .webp per le immagini e l’uso di pagination.
 
-#### Autoload
+### Autoload
 Per quanto riguarda i nomi dei file e la struttura del progetto sono state utilizzate delle convenzioni. Tale sistema di nomenclatura è alla base del funzionamento del metodo *autoloadFunction()* contenuto in index.php: tale metodo è registrato come funzione autoload di PHP ( *spl_autoload_register()* ): si occupa di caricare automaticamente le classi istanziate nel programma, senza dover scrivere all’inizio di ogni file una lunga lista di *include* o *require*.
 
-#### Astrazione ed ereditarietà
+### Astrazione ed ereditarietà
 I controller sono tutti derivati dal controller astratto *Controller.php* dal quale ereditano proprietà e metodi fondamentali al funzionamento dell’applicazione, quali ad esempio le funzioni di *redirect*, di *rendering* delle viste e di gestione delle eccezioni. Inoltre per la gestione dei controller è stato implementato un *RouterController* che riceve un indirizzo URL, lo processa e chiama il controller appropriato in base all’informazione fornitagli. Questo consente in seguito al controller di processare la richiesta e mostrare la vista relativa.
 
-#### Pretty URLs
+### Pretty URLs
 Tale procedimento ha consentito, attraverso le giuste impostazioni del file .htaccess, di implementare un sistema di *pretty URLs*: durante l’utilizzo del sito non è mai visibile la struttura delle directory e dei file nel web server. 
 Gli URL sono formati con una logica più user-friendly: 
 
