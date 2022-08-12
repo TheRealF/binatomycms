@@ -2,7 +2,7 @@
 
 ## _Progetto di Basi di Dati, Unipi, anno accademico 20/21_ 
 
-![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)JavaScript	![jQuery](https://img.shields.io/badge/jquery-%230769AD.svg?style=for-the-badge&logo=jquery&logoColor=white)
+![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)	![jQuery](https://img.shields.io/badge/jquery-%230769AD.svg?style=for-the-badge&logo=jquery&logoColor=white)
 
 Per la realizzazione del progetto di Basi di Dati, di seguito denominato **Binatomy CMS**, è stato utilizzato il pattern architetturale MVC, *Model View Controller*.
 
